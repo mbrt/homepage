@@ -8,25 +8,26 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
         with:
-          ref: main
-
-      - name: Get Theme
-        run: git submodule update --init --recursive
+          submodules: true
+          fetch-depth: 0
 
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.120.1'
 
       - name: Build
-        run: hugo --gc --verbose --minify
+        run: hugo --gc --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
