@@ -3,7 +3,7 @@ name: Build GH-Pages
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -12,7 +12,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: main
 
       - name: Get Theme
         run: git submodule update --init --recursive
