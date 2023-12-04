@@ -1,0 +1,24 @@
+baseURL: https://mbrt.dev/
+languageCode: en-us
+title: mbrt
+theme: "PaperMod"
+
+params:
+  profileMode:
+    enabled: true
+    subtitle: "Human, engineer, hacker, professional complainer (in this order)"
+    imageUrl: "img/profile.jpg"
+    imageTitle: "Not a real picture of myself"
+    imageWidth: 256
+    imageHeight: 192
+    buttons:
+      - name: Blog
+        url: "https://blog.mbrt.dev"
+
+  socialIcons: # optional
+    - name: github
+      url: "https://github.com/mbrt"
+    - name: twitter
+      url: "https://twitter.com/mbrt_dev"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/michelebertasi/"
